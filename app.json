@@ -14,9 +14,10 @@
     "pages/login/index",
     "pages/auth/index",
     "pages/pay/index",
-   "pages/new_index/index",
-   "pages/scanf-grade/index",
-   "pages/tianxiechengji/index"
+    "pages/new_index/index",
+    "pages/scanf-grade/index",
+    "pages/tianxiechengji/index",
+    "pages/mydingdan/mydingdan"
   ],
   "tabBar": {
     "color": "#999",
@@ -46,5 +47,4 @@
     ]
   },
   "sitemapLocation": "sitemap.json"
- 
 }
