@@ -18,7 +18,8 @@
     "pages/scanf-grade/index",
     "pages/tianxiechengji/index",
     "pages/my_order/my_order",
-    "pages/search_page/categorys"
+    "pages/search_page/categorys",
+    "pages/my_advice/index"
   ],
   "tabBar": {
     "color": "#999",
