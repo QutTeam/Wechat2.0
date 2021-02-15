@@ -6,13 +6,13 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": false,
-    "postcss": true,
+    "enhance": true,
+    "postcss": false,
     "preloadBackgroundData": false,
     "minified": true,
     "newFeature": false,
     "coverView": true,
-    "nodeModules": false,
+    "nodeModules": true,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -23,7 +23,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": true,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -36,12 +36,12 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.2",
-  "appid": "wxe895bb1a185a44d0",
-  "projectname": "miniprogram-3",
+  "appid": "wxbd43ad6494d5522c",
+  "projectname": "%E9%AB%98%E8%80%83%E5%BF%97%E6%84%BF",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -50,23 +50,41 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "1",
+          "pathName": "pages/Intelligent_measure/index1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/jiazai/jiazai",
+          "pathName": "pages/jiazai/jiazai",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Intelligent_measure/index1",
+          "pathName": "pages/Intelligent_measure/index1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tianxiechengji/index",
+          "pathName": "pages/tianxiechengji/index",
+          "scene": null
+        }
+      ]
     }
   }
 }
