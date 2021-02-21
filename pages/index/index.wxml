@@ -1,14 +1,39 @@
-<!-- <view wx:if="{{userinfo.avatarUrl}}">
-<view class="page-body">
-  <view class="btn-area" >
-<text class="grade">{{userinfo.grade}}分</text>
-<text class="g1">排名{{userinfo.nickName}}名</text>
-<button type="default" disabled="true" plain="true" class="b">查看推荐院校</button>
-</view> 
+<view class="beijing">
+<view wx:if="{{chengji==false}}">
+<navigator class="qingshuruchengji" url="/pages/tianxiechengji/index" >请输入成绩</navigator>
 </view>
-</view> -->
+<view wx:if="{{chengji==true}}">
+	<view class="gaokaozongfen">高考总分为：{{gaokaozongfen}}</view>
+		<view class="gaokaopaiming">排名总位次：{{paiming}}</view>
+	<view class="chengji">
+		<view class="diqu">地区：山东</view>
+		<view class="xiugaichengji"><navigator url="/pages/tianxiechengji/index" >修改成绩</navigator></view>
 
-<block wx:if="{{isShowConfirm}}">
+<view class="heiyuan">
+	<view class="neirong">
+		<text>{{kemuyi}}</text>
+	</view>
+</view>
+</view>
+<view class="chengji1">
+<view class="heiyuan">
+	<view class="neirong">
+		<text>{{kemuer}}</text>
+	</view>
+</view>
+</view>
+<view class="chengji2">
+<view class="heiyuan">
+	<view class="neirong">
+		<text>{{kemusan}}</text>
+	</view>
+</view>
+</view>
+</view>
+</view>
+
+
+<!-- <block wx:if="{{isShowConfirm}}">
       <view class='toast-box'>
         <view class='toastbg'></view>
         <view class='showToast'>
@@ -30,22 +55,16 @@
             </view>
         </view>
     </view>
-  </block>
+  </block> -->
 
-
-<view class="page-body">
-	<view class="btn-area">
-		<navigator class="qingshuruchengji" url="/pages/tianxiechengji/index">请输入成绩</navigator>
-	</view>
-</view>
 <view class="user_content">
 	<view class="user_main">
 		<view class="history_wrap">
 			<navigator>
 				<image class="his_images" src="/images/xuexiao.png"></image>
 				<view class="his_name">院校大全</view>
-			</navigator>
-			<navigator url="/pages/collect/index">
+		 	 </navigator>
+		 	 <navigator url="/pages/collect/index">
 				<image class="his_images" src="/images/zhuanyezhiyetongs.png"></image>
 				<view class="his_name">专业大全</view>
 			</navigator>
@@ -62,7 +81,7 @@
 	<view class="daoshudierdahang">
 		<view class="diyikuai">
 			<view class="zhinengtianzhiyuan">
-				<navigator>
+				<navigator url="../Intelligent_measure/index1">
 					<image class="sanzhangtupian" src="/images/zhinengtianbaozhiyuan.png"></image>
 					<view class="shaoweidadian">智能填志愿</view>
 					<view class="huisexiaozi">智能辅助填志愿</view>
