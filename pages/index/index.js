@@ -1,19 +1,17 @@
 
 // Page(pageObject)
 Page({
-  handleGetUserInfo(e) {
-    const {
-      userInfo
-    } = e.detail;
-    wx.setStorageSync("userinfo", userInfo);
-  },
   data:{
+    kemuyi:"",
+    kemuer:"",
+    kemusan:"",
+  chengji:false,
   userinfo:{},
   Phone:'',
   //弹窗不显示
   isShowConfirm:'false',
 },
-cancel:function(){
+  cancel:function(){
   that.setData({
     isShowConfirm: false,
   })
@@ -62,6 +60,22 @@ this.setData({
 })
 },
 onLoad(){
+  const kemuyi=wx.getStorageSync('kemuyi')
+if(kemuyi){
+this.setData({
+ chengji:true
+})
+this.setData({kemuyi})
+  }
+ var kemuer = wx.getStorageSync("kemuer")
+this.setData({kemuer})
+var kemusan = wx.getStorageSync("kemusan")
+this.setData({kemusan})
+var gaokaozongfen = wx.getStorageSync("gaokaozongfen")
+this.setData({gaokaozongfen})
+var paiming = wx.getStorageSync("paiming")
+this.setData({paiming})
+
    const Phone =wx.getStorageSync('Phone')
    if(Phone){
      this.setData({
