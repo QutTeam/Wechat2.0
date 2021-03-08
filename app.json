@@ -16,11 +16,17 @@
     "pages/new_index/index",
     "pages/scanf-grade/index",
     "pages/tianxiechengji/index",
+<<<<<<< HEAD
     "pages/mydingdan/mydingdan",
     "pages/search_page/categorys",
     "pages/my_advice/index",
     "pages/jiazai/jiazai",
     "pages/Intelligent_measure/index1"
+=======
+    "pages/my_order/my_order",
+    "pages/search_page/categorys",
+    "pages/my_advice/index"
+>>>>>>> 70882cd78b910350d28984abacdd4f5563ef697f
   ],
   "tabBar": {
     "color": "#999",

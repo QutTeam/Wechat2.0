@@ -33,7 +33,7 @@ Page({
       userInfo
     } = e.detail;
     wx.setStorageSync("userinfo", userInfo);
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/user/index',
     })
   },

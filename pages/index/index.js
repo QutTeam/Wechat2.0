@@ -9,15 +9,15 @@ Page({
   userinfo:{},
   Phone:'',
   //弹窗不显示
-  isShowConfirm:'false',
+  isShowConfirm:true,
 },
   cancel:function(){
-  that.setData({
+  this.setData({
     isShowConfirm: false,
   })
-  wx.navigateTo({
-    url: 'pages/index/index',
-  })
+  // wx.navigateTo({
+  //   url: 'pages/index/index',
+  // })
 },
 setphone:function(e){
   var that=this
@@ -27,7 +27,7 @@ setphone:function(e){
     url: 'http://wechaiapp.shangweishuju.com/Users/UpdateUserPhone',
     data: {
       openID: openid,
-      phone:this.data.Phone
+      phone:that.data.Phone
     },
     header: {
       'content-type': 'application/json' //默认值
@@ -39,20 +39,17 @@ setphone:function(e){
         that.setData({
           isShowConfirm: false,
         })
-        wx.navigateTo({
-          url: 'pages/index/index',
-        })
+       wx.setStorageSync('Phone', this.data.Phone)
       }else{
         that.setData({
           isShowConfirm: false,
         })
-        wx.navigateTo({
-          url: 'pages/index/index',
-        })
       }
     }
   })
-
+  that.setData({
+    isShowConfirm: false,
+  })
 },
 phone:function(e){
 this.setData({

@@ -16,9 +16,9 @@ Page({
             url: 'https://api.weixin.qq.com/sns/jscode2session',
             data: {
               js_code: res.code,
-              appid: 'wxe895bb1a185a44d0',
+              appid: 'wxd71e7e36acaf97c2',
               grant_type: 'authorization_code',
-              secret: '262c6a78a2787c00875f66e26a6f8fd3'
+              secret: '6060395c18f11e5847142328024707e1'
             },
             success(res) {
               console.log(res.data.openid)
@@ -38,9 +38,9 @@ Page({
     
   },
   onGotUserInfo(e) {
+    
     var that = this
     console.log(that.data.openid)
-
     const {
       userInfo
     } = e.detail;
@@ -59,6 +59,7 @@ Page({
       method: 'POST',
       success: function (res) {
         if (res.data.Code == 2000) {
+          
           console.log(res)
           console.log(res.data.Data.Phone)
           wx.setStorageSync("Phone", res.data.Data.Phone);
@@ -66,15 +67,35 @@ Page({
             url: '/pages/index/index',
           })
         } else {
-          wx.switchTab({
-            url: '/pages/index/index',
+          console.log(res)
+          wx.request({
+            url: 'http://wechaiapp.shangweishuju.com/Zhike/Users/Add',
+            data: {
+              OpenID: that.data.openid,
+              UserName:that.data.userInfo.nickName,
+              Country:that.data.userInfo.country,
+              Province:that.data.userInfo.province,
+              City:that.data.userInfo.city,
+              AvatarUrl:that.data.userInfo.avatarUrl,
+            },
+            header: {
+              'content-type': 'application/json' //默认值
+            },
+            method: 'POST',
+            success: function (res) {
+              console.log(res)
+            }
           })
+          // wx.switchTab({
+          //   url: '/pages/index/index',
+          // })
         }
 
       }
     })
-
-
+    // wx.switchTab({
+    //   url: '/pages/index/index',
+    // })
   },
 
   onReady: function () {
@@ -90,9 +111,13 @@ Page({
       });
     });
   },
-  // onShow(){
-  //     const userinfo=wx.getStorageSync("userInfo");
-  //     this.setData({userInfo})
-  //   }
+  onShow(){
+    // const openid=wx.getStorageSync("openid");
+    // if(openid){
+    //   wx.switchTab({
+    //     url: '/pages/index/index',
+    //   })
+    // }
+    }
 
 })
